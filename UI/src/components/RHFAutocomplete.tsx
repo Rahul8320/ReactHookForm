@@ -1,3 +1,4 @@
+import React from "react";
 import { Autocomplete, Box, Checkbox, TextField } from "@mui/material";
 import { Controller, Path, FieldValues, useFormContext } from "react-hook-form";
 import { Option } from "../types/option";
@@ -47,7 +48,7 @@ export function RHFAutocomplete<T extends FieldValues>({
             />
           )}
           renderOption={(props, option, { selected }) => (
-            <Box component="li" {...props}>
+            <Box component="li" {...props} key={option.id}>
               <Checkbox
                 icon={<CheckBoxOutlineBlankIcon />}
                 checkedIcon={<CheckBoxIcon />}
@@ -61,5 +62,3 @@ export function RHFAutocomplete<T extends FieldValues>({
     />
   );
 }
-
-// 1:6:44
